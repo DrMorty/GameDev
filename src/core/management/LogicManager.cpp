@@ -41,7 +41,7 @@ namespace engine
         eventManager.clearEvents();
     }
 
-    void LogicsManager::registerScript(Script* script)
+    void LogicManager::registerScript(Script* script)
     {
         notStartedScripts.push_back(script);
         scripts.push_back(script);
