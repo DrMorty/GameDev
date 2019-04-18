@@ -7,7 +7,7 @@ namespace engine
   {
   }
   
-  void Collision::Collision(float x1, float y1, float x2, float y2)
+  void Collision::setCollision(float x1, float y1, float x2, float y2)
   {
     leftTop.x = x1;
     leftTop.y = y1;
