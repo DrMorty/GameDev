@@ -1,4 +1,4 @@
-#include "LogicsManager.h"
+#include "LogicManager.h"
 
 #include "../object_components/Script.h"
 #include "../Engine.h"
@@ -29,7 +29,7 @@ namespace engine
                 script->onCollision(details);
     }
 
-    void LogicManager::updateLogics()
+    void LogicManager::updateLogic()
     {
         Time::updateTime();
         
