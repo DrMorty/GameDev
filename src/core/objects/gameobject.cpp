@@ -1,6 +1,6 @@
-#include "gameobject.h"
+#include "GameObjectComponent.h"
+#include "../storage/GameObject.h"
 
-GameObject::GameObject()
-{
-
+namespace engine
+{   
 }
