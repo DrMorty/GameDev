@@ -1,13 +1,30 @@
 #ifndef SCRIPT_H
 #define SCRIPT_H
 
+#include "GameObjectComponent.h"
+#include "BoxCollider.h"
 
-class Script
-{
-public:
-    virtual void update() = 0;
+namespace engine
+{   
+    class Script : public GameObjectComponent
+    {
+    public:
 
+        virtual void start() = 0;
+        virtual void update() = 0;   
 
-};
+        Script()
+        {
+        }
 
-#endif // SCRIPT_H
+        ~Script()
+        {
+        }
+
+        virtual void onCollision(CollisionDetails& details)
+        {
+        }
+    };
+}
+
+#endif
