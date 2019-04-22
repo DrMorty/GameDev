@@ -14,6 +14,8 @@ namespace engineShorty
     void deleteObject(std::string name);
     void deleteObject(GameObject* object);
     GameObject* findObject(std::string name);
+    void run();
+
 
 }
 
