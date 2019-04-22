@@ -4,28 +4,39 @@
 #include <algorithm>
 #include "../engine.h"
 #include "eventmanager.h"
+#include "Datastorage.h"
 
-EventManager::EventManager()
+namespace engine
 {
 
-}
-
-
-
-void EventManager::Execute()
-{
-
+  
+  void EventManager::checkEvents()
+  {
     sf::Event event;
-    while(Engine::instance()->drawManager->window.pollEvent(event))
+    
+    while((Datadtorage->window()).pollEvent(event))
     {
-
-        /*
-        auto action = (ActionBinder.find(event.type));
-        if (action != ActionBinder.end())
-        {
-            (Engine::instance()->eventHandler->*action->second)();
-        }
-        */
+      if (event.type == sf::Event::KeyPressed)
+      {
+        KeyboardInput::keyPressed(event.key.code)
+      };
+      
+      newEvents.push_back(event);
     }
-
+  }
+  
+  void EventManager::resetEvents()
+  {
+    newEvents.clear();
+  }
+  
+  std::vector<sf::Event> EventManager::getEvents(sf::Event::EventType type)
+  {
+    std::vector<sf::Event> events;
+    
+    for (auto event : newEvents)
+      if (type == event.type)
+        events.push_back(event);
+    return events;
+  }
 }
