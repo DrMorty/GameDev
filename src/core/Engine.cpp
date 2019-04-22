@@ -6,28 +6,9 @@
 
 namespace engine
 {
-    class EngineException: public std::exception
-    {
-    };
-
-    EngineException GameObjectAlreadyExist;
-
-    Engine* Engine::prev_instance = 0;
-
-    Engine::Engine()
-    {
-        logicsManager = new LogicsManager();
-        renderManager = new RenderManager();
-        physicsManager = new PhysicsManager();
-        dataStorage = new DataStorage();
-
-        Metrics::enableLogging();
-    };
     
-    Engine::~Engine()
-    {
-    };
-
+    Engine* Engine::prev_instance = 0;
+    
     Engine* Engine::instance()
     {
         if (!prev_instance)
@@ -38,11 +19,28 @@ namespace engine
         return prev_instance;
     }
 
-    void Engine::run()
+   
+    Engine::~Engine()
+    {
+    };
+
+    
+    void Engine::engineRun()
     {
         Metrics::updateMetrics();
         logicsManager -> updateLogics();
         renderManager -> renderDrawableObjects(); 
+    };
+    
+    
+    Engine::Engine()
+    {
+        logicsManager = new LogicsManager();
+        renderManager = new RenderManager();
+        physicsManager = new PhysicsManager();
+        dataStorage = new DataStorage();
+
+        Metrics::enableLogging();
     };
 }
 
