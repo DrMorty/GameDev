@@ -34,6 +34,6 @@ namespace engine
 
     private:
         Engine();
-        static Engine* m_instance;
+        static Engine* prev_instance;
     };
 }
