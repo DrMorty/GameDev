@@ -64,6 +64,7 @@ namespace engine
             case KeyCode::E:        return E;
             case KeyCode::Q:        return Q;
             case KeyCode::Space:    return Space;
+            case KeyCode::Escape:   return Escape;
         }
     }
 }
