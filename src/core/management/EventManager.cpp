@@ -3,7 +3,7 @@
 #include <iostream>
 #include <algorithm>
 #include "../engine.h"
-#include "eventmanager.h"
+#include "EventManager.h"
 #include "Datastorage.h"
 
 namespace engine
