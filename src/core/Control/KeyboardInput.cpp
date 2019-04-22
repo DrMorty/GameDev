@@ -1,17 +1,17 @@
-#include "input.h"
+#include "KeyboardKeyboardInput.h"
 #include "../Engine.h"
 
 namespace engine
 {
-    std::map<KeyCode, bool> Input::isKeyHold;
-    std::map<KeyCode, bool> Input::isKeyPressed;
+    std::map<KeyCode, bool> KeyboaKeyboardInput::isKeyHold;
+    std::map<KeyCode, bool> KeyboardInput::isKeyPressed;
     
-    bool Input::getKey(KeyCode key)
+    bool KeyboardInput::getKey(KeyCode key)
     {
       return isKeyHold[key];
     }
     
-    bool Input::isKeyDown(KeyCode key)
+    bool KeyboardInput::isKeyDown(KeyCode key)
     {  auto keyPressedEvents = Engine::instance()->logicsManager->eventManager.getAllEventsOfType(sf::Event::KeyPressed);
 
         for (auto& event : keyPressedEvents)
@@ -21,7 +21,7 @@ namespace engine
         return false;
     }
     
-    bool Input::isKeyUp(KeyCode key)
+    bool KeyboardInput::isKeyUp(KeyCode key)
     {
         auto keyPressedEvents = Engine::instance()->logicsManager->eventManager.getAllEventsOfType(sf::Event::KeyReleased);
 
@@ -32,7 +32,7 @@ namespace engine
         return false;
     }
 
-    void Input::keyPressed(sf::Keyboard::Key key)
+    void KeyboardInput::keyPressed(sf::Keyboard::Key key)
     {
         auto keyCode = convertFromSfmlKey(key);
 
@@ -45,7 +45,7 @@ namespace engine
     }
     
     
-        void Input::keyReleased(sf::Keyboard::Key key)
+        void KeyboardInput::keyReleased(sf::Keyboard::Key key)
     {
         auto keyCode = convertFromSfmlKey(key);
 
@@ -53,7 +53,7 @@ namespace engine
         isKeyHold[keyCode] = false;
     }
     
-     KeyCode Input::convertFromSfmlKey(sf::Keyboard::Key key)
+     KeyCode KeyboardInput::convertFromSfmlKey(sf::Keyboard::Key key)
     {
         switch(key)
         {
