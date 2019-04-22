@@ -8,7 +8,7 @@
 #include "management/PhysicsManager.h"
 #include "storage/DataStorage.h"
 
-#include "controllers/Input.h"
+#include "controllers/KeyboardInput.h"
 #include "controllers/Time.h"
 #include "controllers/Camera.h"
 
