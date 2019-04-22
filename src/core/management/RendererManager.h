@@ -13,7 +13,7 @@ namespace engine
         RenderManager();
 
         void renderDrawableObjects();
-
+        void renderObject(sf::Drawable& object);
         void registerRenderer(Renderer* renderer);
         void unregisterRenderer(Renderer* renderer);
 
