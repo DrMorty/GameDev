@@ -26,29 +26,14 @@ namespace engine
         static Engine* instance();
         ~Engine();
 
-        void run();
+        void engineRun();
 
-        std::unique_ptr<RenderManager> renderManager;
-        std::unique_ptr<LogicsManager> logicsManager;
-        std::unique_ptr<DataStorage> dataStorage;
+        DataStorage* DataStorage;
+        DrawManager* DrawManager;
+        LogicsManager* LogicsManager;
 
     private:
         Engine();
-
         static Engine* m_instance;
     };
 }
-
-namespace engineX
-{
-    using namespace engine;
-
-    void createObject(std::string name);
-    GameObject& getObject(std::string name);
-    void deleteObject(std::string name);
-    void deleteObject(GameObject* object);
-
-    void runScene();
-}
-
-#endif
