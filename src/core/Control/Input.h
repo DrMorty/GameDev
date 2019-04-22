@@ -10,7 +10,8 @@ enum KeyCode {
     D = sf::Keyboard::Key::D,
     Q = sf::Keyboard::Key::Q,
     E = sf::Keyboard::Key::E,
-    Space = sf::Keyboard::Key::Space
+    Space = sf::Keyboard::Key::Space,
+    Escape = sf::Keyboard::Key::Escape
 };
 
 
