@@ -39,22 +39,22 @@ namespace engine
    }
    
    
-       void RenderManager::registerRenderer(Renderer* renderer)
+       void RenderManager::addRenderer(Renderer* renderer)
     {
         renderers.push_back(renderer);
     }
 
-    void RenderManager::unregisterRenderer(Renderer* renderer)
+    void RenderManager::deleteRenderer(Renderer* renderer)
     {
         renderers.erase(remove(renderers.begin(), renderers.end(), renderer), renderers.end());
     }
 
-    void RenderManager::registerCollider(BoxCollider* collider)
+    void RenderManager::addCollider(BoxCollider* collider)
     {
         colliders.push_back(collider);
     }
 
-    void RenderManager::unregisterCollider(BoxCollider* collider)
+    void RenderManager::deleteCollider(BoxCollider* collider)
     {
         colliders.erase(remove(colliders.begin(), colliders.end(), collider), colliders.end());
     }
