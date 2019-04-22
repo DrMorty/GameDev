@@ -7,8 +7,7 @@ namespace engine
 {   
     void Renderer2D::setSprite(const sf::Texture& t_texture)
     {
-        texture = t_texture;
-        sprite.setTexture(texture);
+        sprite.setTexture(t_texture);
     }
 
     void Renderer2D::setTexture(const sf::Texture& t_texture)
@@ -16,7 +15,7 @@ namespace engine
         setSprite(t_texture);
     }
 
-    void Renderer2D::draw(sf::RenderWindow& windowInstance)
+    void Renderer2D::draw(sf::RenderWindow& window)
     {
         Vector3 textureSize = texture.getSize();
         Vector3 newPosition = Camera::projectionToCamera(object->transform.position - Vector3(textureSize.x, -textureSize.y) / 2);
