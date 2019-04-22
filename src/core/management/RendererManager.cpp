@@ -10,6 +10,11 @@ namespace engine
     {
     }
     
+     void RenderManager::renderObject(sf::Drawable& object)
+    {
+        Engine::instance()->dataStorage->window().draw(object);
+    }
+    
    void RenderManager::renderCollider(BoxCollider* collider)
    {
     sf::Vertex lines[] = 
@@ -30,7 +35,7 @@ namespace engine
     for (auto& line : lines)
         line.position = Camera::projectionToCamera(line.position + collider->object->transform.position);
 
-    Engine::instance()->dataStorage->getWindowInstance().draw(lines, 8, sf::Lines);
+    Engine::instance()->dataStorage->window().draw(lines, 8, sf::Lines);
    }
    
    
