@@ -14,11 +14,11 @@ namespace engine
 
         void renderDrawableObjects();
         void renderObject(sf::Drawable& object);
-        void registerRenderer(Renderer* renderer);
-        void unregisterRenderer(Renderer* renderer);
+        void addRenderer(Renderer* renderer);
+        void deleteRenderer(Renderer* renderer);
 
-        void registerCollider(BoxCollider* collider);
-        void unregisterCollider(BoxCollider* collider);
+        void addCollider(BoxCollider* collider);
+        void deleteCollider(BoxCollider* collider);
 
     private:
         std::vector<Renderer*> renderers;
