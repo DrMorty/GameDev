@@ -1,5 +1,5 @@
-#ifndef INPUT_H
-#define INPUT_H
+#ifndef KEYBOARDINPUT_H
+#define KEYBOARDINPUT_H
 #include <SFML/Graphics.hpp>
 #include <map>
 
@@ -17,7 +17,7 @@ enum KeyCode {
 
 namespace engine
 {
-    class Input
+    class KeyboardInput
     {
      public:
         static bool getKey(KeyCode key);
@@ -31,7 +31,7 @@ namespace engine
         static std::map<KeyCode, bool> isKeyPressed;
 
      private:
-        Input();
+        KeyboardInput();
         static KeyCode convertFromSfmlKey(sf::Keyboard::Key key);
     };
 }
