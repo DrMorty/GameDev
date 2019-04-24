@@ -2,8 +2,8 @@
 #define RENDER_MANAGER_H
 
 #include <SFML/Graphics.hpp>
-#include "../object_components/Renderer.h"
-#include "../object_components/Collision.h"
+#include "../objects/Renderer.h"
+#include "../objects/Collision.h"
 
 namespace engine
 {   
