@@ -15,7 +15,7 @@ class Square : public Script
         object->transform.position.x = 100;
         object->addComponent<Collision>();
         object->getComponent<Collision>()->enableHighlight();
-        object->getComponent<BoxCollider>()->setCollider(-50, 15, 50, -15);
+        object->getComponent<Collision>()->setCollider(-50, 15, 50, -15);
         
     }
 
