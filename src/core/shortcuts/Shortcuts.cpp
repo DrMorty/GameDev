@@ -3,7 +3,7 @@
 #include "../engine.h"
 #include <iterator>
 
-namespace engineShorty
+namespace engineS
 {
     void createObject(std::string name)
     {
