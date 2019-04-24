@@ -18,13 +18,13 @@ namespace engine
     {
         for (auto component : m_components)
         {
-            if (component->typeName == typeid(Renderer2D).name())
+            if (component->typeName == typeid(Renderer).name())
             {
                 unregisterRendererForThisObject(component.get());
                 continue;
             }
 
-            if (component->typeName == typeid(BoxCollider).name())
+            if (component->typeName == typeid(Collision).name())
             {
                 unregisterColliderForThisObject(component.get());
                 continue;
@@ -44,7 +44,7 @@ namespace engine
 
     void GameObject::registerScriptForThisObject(GameObjectComponent* script)
     {
-        Engine::instance()->logicsManager->registerScript(static_cast<Script*>(script));
+        Engine::instance()->logicManager->registerScript(static_cast<Script*>(script));
     }
 
     void GameObject::registerRendererForThisObject(GameObjectComponent* renderer)
@@ -54,7 +54,7 @@ namespace engine
 
     void GameObject::registerColliderForThisObject(GameObjectComponent* collider)
     {
-        static_cast<BoxCollider*>(collider)->setColliderBySprite();
+        static_cast<Collision*>(collider)->setColliderBySprite();
         Engine::instance()->physicsManager->registerCollider(static_cast<BoxCollider*>(collider));   
     }
 
@@ -65,7 +65,7 @@ namespace engine
 
     void GameObject::unregisterScriptForThisObject(GameObjectComponent* script)
     {
-        Engine::instance()->logicsManager->unregisterScript(static_cast<Script*>(script));
+        Engine::instance()->logicManager->unregisterScript(static_cast<Script*>(script));
     }
 
     void GameObject::unregisterRendererForThisObject(GameObjectComponent* renderer)
