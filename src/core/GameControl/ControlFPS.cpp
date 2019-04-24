@@ -10,7 +10,7 @@ namespace engine
   {
   }
 
-  void ControlFPS::UpdateTime()
+  void ControlFPS::updateTime()
   {
     auto currentTime = std::chrono::system_clock::now();
 
