@@ -22,7 +22,7 @@ namespace engine
 
      private:
         KeyboardInput();
-        static KeyCode convertFromSfmlKey(sf::Keyboard::Key key)
+        static KeyCode convertFromSfmlKey(sf::Keyboard::Key key);
         Camera();
 
         static Vector3 position;  
