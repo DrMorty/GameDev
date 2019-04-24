@@ -1,6 +1,6 @@
 
 #include "RenderManager.h"
-#include "../object_components/Renderer.h"
+#include "../objects/Renderer.h"
 #include "../Engine.h"
 
 
