@@ -7,7 +7,7 @@
 namespace engine
 {
 
-    Engine* Engine::m_instance = 0;
+    Engine* Engine::prev_instance = 0;
     
     Engine* Engine::instance()
     {
