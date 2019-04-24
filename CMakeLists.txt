@@ -13,9 +13,9 @@ csrc = $(wildcard src/*.cpp) 					        \
 
 obj = $(csrc:.cpp=.o)
 
-all: EngineX clean
+all: application clean
 
-EngineX: $(obj)
+application: $(obj)
 	$(CXX) $(CFLAGS)-o $@ $^ $(LDFLAGS)	
 
 clean: 
