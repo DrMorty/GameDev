@@ -1,6 +1,6 @@
 #ifndef SHORTCUTS_H
 #define SHORTCUTS_H
-#include "../objects/gameobject.h"
+#include "../objects/GameObjectComponent.h"
 #include <string>
 #include "core/engine.h"
 #include "scripts/picturescript.h"
