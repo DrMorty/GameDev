@@ -15,7 +15,7 @@ namespace engine
     public:
         void updateLogic();
         void callStartForScripts();
-        void clearNotStarted()
+        void clearNotStarted();
         void callUpdateForScripts();
         void callOnCollisionForObject(GameObject* object, CollisionDetails& details);
 
