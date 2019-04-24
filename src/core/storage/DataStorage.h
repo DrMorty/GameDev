@@ -18,8 +18,8 @@ namespace engine
         int height;
     };
 
-    const Window HD_Window = {"HD", 1280, 720}
-    const Window Full_HD_Window = {"FHD", 1920, 1080}
+    const WindowSettings HD_Window = {"HD", 1280, 720}
+    const WindowSettings Full_HD_Window = {"FHD", 1920, 1080}
 
 
     class DataStorage
