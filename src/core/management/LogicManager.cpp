@@ -31,7 +31,7 @@ namespace engine
 
     void LogicManager::updateLogic()
     {
-        Time::updateTime();
+        ControlFPS::updateTime();
         
         eventManager.pollEvents();
 
