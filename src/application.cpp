@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "core/Engine.h"
+#include "core/shortcuts/Shortcuts.h"
 
 
 Engine* Engine::ex_instance = 0;
