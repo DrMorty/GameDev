@@ -28,7 +28,7 @@ namespace engine
     void Engine::engineRun()
     {
         ControlFPS::updateMetrics();
-        logicManager -> updateLogics();
+        logicManager -> updateLogic();
         renderManager -> renderDrawableObjects(); 
     };
     
