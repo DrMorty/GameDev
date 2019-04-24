@@ -68,7 +68,7 @@ namespace engine
                     auto secondObjectDetails = firstObjectDetails;
                     secondObjectDetails.Collider1 = firstObjectDetails.Collider2;
                     secondObjectDetails.Collider2 = firstObjectDetails.Collider1;
-                    secondObjectDetails.CollisionTrajectory = -1.0f * firstObjectDetails.collisionTrajectory;
+                    secondObjectDetails.CollisionTrajectory = -1.0f * firstObjectDetails.CollisionTrajectory;
 
                     Engine::instance()->logicManager->callOnCollisionForObject(firstCollider->object, firstObjectDetails);
                     Engine::instance()->logicManager->callOnCollisionForObject(secondCollider->object, secondObjectDetails);       
