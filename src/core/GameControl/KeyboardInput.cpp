@@ -15,7 +15,7 @@ namespace engine
     {  auto keyPressedEvents = Engine::instance()->logicManager->eventManager.getAllEventsOfType(sf::Event::KeyPressed);
 
         for (auto& event : keyPressedEvents)
-            if (event.key.code == key && isPressedOnce[key])
+            if (event.key.code == key && isKeyPressed[key])
                 return true;
                 
         return false;
