@@ -1,7 +1,7 @@
 #include "Engine.h"
 #include <iostream>
 #include <iterator>
-#include "Controllers/Metrics.h"
+#include "objects/GameObjectComponent.h"
 #include <exception>
 
 namespace engine
