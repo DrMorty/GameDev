@@ -5,10 +5,11 @@
 
 Engine* Engine::ex_instance = 0;
 
+//write your game here
+
 
 int main()
 {
-
-    Engine::instance()->engineRun();
-    return 0;
+    
+    //start your game here
 }
