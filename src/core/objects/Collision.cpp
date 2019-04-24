@@ -16,6 +16,14 @@ namespace engine
     rightDown.y = y2;  
   }
   
+  void Collision::enableHighlight()
+    {
+        if (!highlighted)
+            Engine::instance()->renderManager->registerCollider(this);
+
+        highlighted = true;
+    }
+  
   void Collision::setCollisionWithSprite()
   {
     if (!object ->hasComponent<Renderer>())
