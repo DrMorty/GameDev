@@ -27,7 +27,7 @@ namespace engine
     
     void Engine::engineRun()
     {
-        Metrics::updateMetrics();
+        ControlFPS::updateMetrics();
         logicsManager -> updateLogics();
         renderManager -> renderDrawableObjects(); 
     };
@@ -40,7 +40,7 @@ namespace engine
         physicsManager = new PhysicsManager();
         dataStorage = new DataStorage();
 
-        Metrics::enableLogging();
+        ControlFPS::enableLogging();
     };
 }
 
