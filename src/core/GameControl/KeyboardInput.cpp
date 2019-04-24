@@ -1,9 +1,9 @@
-#include "KeyboardKeyboardInput.h"
+#include "KeyboardInput.h"
 #include "../Engine.h"
 
 namespace engine
 {
-    std::map<KeyCode, bool> KeyboaKeyboardInput::isKeyHold;
+    std::map<KeyCode, bool> KeyboardInput::isKeyHold;
     std::map<KeyCode, bool> KeyboardInput::isKeyPressed;
     
     bool KeyboardInput::getKey(KeyCode key)
@@ -12,7 +12,7 @@ namespace engine
     }
     
     bool KeyboardInput::isKeyDown(KeyCode key)
-    {  auto keyPressedEvents = Engine::instance()->logicsManager->eventManager.getAllEventsOfType(sf::Event::KeyPressed);
+    {  auto keyPressedEvents = Engine::instance()->logicManager->eventManager.getAllEventsOfType(sf::Event::KeyPressed);
 
         for (auto& event : keyPressedEvents)
             if (event.key.code == key && isPressedOnce[key])
@@ -23,7 +23,7 @@ namespace engine
     
     bool KeyboardInput::isKeyUp(KeyCode key)
     {
-        auto keyPressedEvents = Engine::instance()->logicsManager->eventManager.getAllEventsOfType(sf::Event::KeyReleased);
+        auto keyPressedEvents = Engine::instance()->logicManager->eventManager.getAllEventsOfType(sf::Event::KeyReleased);
 
         for (auto& event : keyPressedEvents)
             if (event.key.code == key)
