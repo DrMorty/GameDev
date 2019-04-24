@@ -31,7 +31,7 @@ namespace engine
 
         dataStorage* DataStorage;
         drawManager* DrawManager;
-        logicsManager* LogicsManager;
+        logicManager* LogicManager;
 
     private:
         Engine();
