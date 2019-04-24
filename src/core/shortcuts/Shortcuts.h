@@ -2,7 +2,7 @@
 #define SHORTCUTS_H
 #include "../objects/GameObjectComponent.h"
 #include <string>
-#include "core/engine.h"
+#include "../engine.h"
 
 
 
