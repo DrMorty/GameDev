@@ -49,13 +49,13 @@ namespace engine
 
     void GameObject::registerRendererForThisObject(GameObjectComponent* renderer)
     {
-        Engine::instance()->renderManager->registerRenderer(static_cast<Renderer2D*>(renderer));
+        Engine::instance()->renderManager->registerRenderer(static_cast<Renderer*>(renderer));
     }
 
     void GameObject::registerColliderForThisObject(GameObjectComponent* collider)
     {
         static_cast<Collision*>(collider)->setColliderBySprite();
-        Engine::instance()->physicsManager->registerCollider(static_cast<BoxCollider*>(collider));   
+        Engine::instance()->physicsManager->registerCollider(static_cast<Collision*>(collider));   
     }
 
     void GameObject::registerRigidBodyForThisObject(GameObjectComponent* rigidBody)
@@ -70,7 +70,7 @@ namespace engine
 
     void GameObject::unregisterRendererForThisObject(GameObjectComponent* renderer)
     {
-        Engine::instance()->renderManager->unregisterRenderer(static_cast<Renderer2D*>(renderer));
+        Engine::instance()->renderManager->unregisterRenderer(static_cast<Renderer*>(renderer));
     }
 
     void GameObject::unregisterColliderForThisObject(GameObjectComponent* collider)
