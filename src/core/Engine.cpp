@@ -28,14 +28,14 @@ namespace engine
     void Engine::engineRun()
     {
         ControlFPS::updateMetrics();
-        logicsManager -> updateLogics();
+        logicManager -> updateLogics();
         renderManager -> renderDrawableObjects(); 
     };
     
     
     Engine::Engine()
     {
-        logicsManager = new LogicsManager();
+        logicManager = new LogicManager();
         renderManager = new RenderManager();
         physicsManager = new PhysicsManager();
         dataStorage = new DataStorage();
