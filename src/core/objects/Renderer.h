@@ -7,10 +7,10 @@
 
 namespace engine
 {   
-    class Renderer2D : public GameObjectComponent
+    class Renderer : public GameObjectComponent
     {
     public:
-        ~Renderer2D() 
+        ~Renderer() 
         {};
 
         void setSprite(const sf::Texture& t_texture);
