@@ -32,6 +32,8 @@ namespace engine
       
       void setCollision(float x1, float y1, float x2, float y2);
       void setCollisionWithSprite();
+      void enableHighlight();
+      void disableHighlight();
       
      sf::Vector2f leftTop;
      sf::Vector2f rightDown;
