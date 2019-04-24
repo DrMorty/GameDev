@@ -38,3 +38,5 @@ namespace engine
         static Engine* prev_instance;
     };
 }
+
+#endif
