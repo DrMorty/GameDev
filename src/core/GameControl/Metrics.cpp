@@ -3,6 +3,19 @@
 
 namespace engine
 {
+  float Time::deltaTime = 0;
+    std::chrono::time_point <std::chrono::_V2::system_clock> Time::previousTime = std::chrono::system_clock::now();
+
+  void Time::UpdateTime()
+  {
+    auto currentTime = std::chrono::system_clock::now();
+
+        std::chrono::duration<double> delta = currentTime - previousTime;
+        deltaTime = delta.count();
+
+        previousTime = currentTime;
+    }
+  
   int::Metrics::FPS = 0;
   bool Metrics::Logging = false;
   
