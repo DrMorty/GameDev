@@ -1,6 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "core/engine.h"
+#include "core/Engine.h"
 
 
 Engine* Engine::ex_instance = 0;
