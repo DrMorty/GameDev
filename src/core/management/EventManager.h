@@ -1,21 +1,22 @@
-#ifndef EVENTMANAGER_H
-#define EVENTMANAGER_H
+#ifndef EVENT_MANAGER_H
+#define EVENT_MANAGER_H
+
 #include <SFML/Graphics.hpp>
-#include <functional>
-#include <map>
+#include <list>
+#include <vector>
 
 namespace engine
 {
     class EventManager
     {
-        
-        void checkEvents();
-        void resetEvents();
-        
-        std::vector<sf::Event> newEvents;
-        
-        std::vector<sf::Event> getEvents(sf::Event::EventType);
-        
+     public:
+        void pollEvents();
+        void clearEvents();
+
+        std::vector<sf::Event> getAllEventsOfType(sf::Event::EventType);
+
+     private:
+        std::list<sf::Event> newEventsPerFrame;
     };
 }
 
