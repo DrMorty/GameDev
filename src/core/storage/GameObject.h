@@ -12,7 +12,7 @@
 #include "../objects/RigidBody.h"
 #include "../objects/Script.h"
 
-#include "../common/math/Math.h"
+#include "../math/Math.h"
 
 namespace engine
 {   
