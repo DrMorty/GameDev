@@ -73,10 +73,10 @@ namespace engine
         if (std::is_base_of<Script, ComponentType>())
             registerScriptForThisObject(component.get());
 
-        if (typeid(ComponentType).name() == typeid(Renderer2D).name())
+        if (typeid(ComponentType).name() == typeid(Renderer).name())
             registerRendererForThisObject(component.get());
 
-        if (typeid(ComponentType).name() == typeid(BoxCollider).name())
+        if (typeid(ComponentType).name() == typeid(Collision).name())
             registerColliderForThisObject(component.get());
 
         if (typeid(ComponentType).name() == typeid(RigidBody).name())
