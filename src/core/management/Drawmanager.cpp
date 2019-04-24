@@ -1,4 +1,4 @@
-#include "drawmanager.h"
+#include "Drawmanager.h"
 #include "../engine.h"
 #include "../engine.cpp"
 #include <SFML/Graphics.hpp>
