@@ -3,7 +3,7 @@
 #include "../objects/GameObjectComponent.h"
 #include <string>
 #include "core/engine.h"
-#include "scripts/picturescript.h"
+
 
 
 
