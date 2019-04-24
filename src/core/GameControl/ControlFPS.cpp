@@ -3,10 +3,10 @@
 
 namespace engine
 {
-  float Time::deltaTime = 0;
+  float ControlFPS::deltaTime = 0;
     std::chrono::time_point <std::chrono::_V2::system_clock> Time::previousTime = std::chrono::system_clock::now();
 
-  void Time::UpdateTime()
+  void ControlFPS::UpdateTime()
   {
     auto currentTime = std::chrono::system_clock::now();
 
@@ -16,10 +16,10 @@ namespace engine
         previousTime = currentTime;
     }
   
-  int::Metrics::FPS = 0;
-  bool Metrics::Logging = false;
+  int::ControlFPS::FPS = 0;
+  bool ControlFPS::Logging = false;
   
-  void Metrics::updateMetrics()
+  void ControlFPS::updateMetrics()
   {
     static int frames = 0;
     static float elapsedTime = 0;
@@ -32,7 +32,7 @@ namespace engine
       
   }
   
-  void Metrics::updateFPS(int&frames, float&elapsed)
+  void ControlFPS::updateFPS(int&frames, float&elapsed)
   {
     FPS = frames / elapsed;
     
@@ -43,11 +43,11 @@ namespace engine
       std::cout << "FPS = " << FPS << std::endl;
   }
   
-  void Metrics::enableLogging()
+  void ControlFPS::enableLogging()
    {
         Logging = true;
     }
-  void Metrics::disableLogging()
+  void ControlFPS::disableLogging()
     {
         Logging = false;
     }
