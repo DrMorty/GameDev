@@ -36,4 +36,9 @@ namespace engineS
     {
         Engine::instance()->engineRun();
     }
+    
+    void stop()
+    {
+        Engine::instance()->~Engine();
+    }
 }
