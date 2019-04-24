@@ -5,15 +5,15 @@
 #include <string>
 #include <memory>
 
-#include "management/RenderManager.h"
-#include "management/LogicManager.h"
-#include "management/PhysicsManager.h"
-#include "storage/DataStorage.h"
-#include "shortcuts/Shortcuts.h"
+#include "../management/RenderManager.h"
+#include "../management/LogicManager.h"
+#include "../management/PhysicsManager.h"
+#include "../storage/DataStorage.h"
+#include "../shortcuts/Shortcuts.h"
 
-#include "GameControl/ControlFPS.h"
-#include "GameControl/GameControlScript.h"
-#include "GameControl/Camera.h"
+#include "../GameControl/ControlFPS.h"
+#include "../GameControl/GameControlScript.h"
+#include "../GameControl/Camera.h"
 
 using engine::Renderer;
 using engine::Collision;
