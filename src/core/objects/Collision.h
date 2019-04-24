@@ -13,7 +13,7 @@ namespace engine
   
   struct CollisionDetails
   {
-    CollisionDetails(Collision* object1, Collision* object2, float depth, sf::Vector2f trajectory);
+    CollisionDetails(Collision* object1, Collision* object2, float depth, sf::Vector2f trajectory) :
     Collider1 (object1), Collider2(object2), depth(depth), collisionTrajectory(trajectory)
     {};
     
