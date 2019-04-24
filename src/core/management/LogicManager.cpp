@@ -1,6 +1,6 @@
 #include "LogicManager.h"
 
-#include "../object_components/Script.h"
+#include "../objects/Script.h"
 #include "../Engine.h"
 
 namespace engine
