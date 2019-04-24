@@ -10,8 +10,13 @@ class Square : public Script
  public:
     void start()
     {
-        object->transform.position.y = -350;
-        object->transform.position.x = 350;
+    
+        object->transform.position.y = 100;
+        object->transform.position.x = 100;
+        object->addComponent<Collision>();
+        object->getComponent<Collision>()->enableHighlight();
+        object->getComponent<BoxCollider>()->setCollider(-50, 15, 50, -15);
+        
     }
 
     void update()
