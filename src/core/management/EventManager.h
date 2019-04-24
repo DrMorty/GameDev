@@ -12,7 +12,7 @@ namespace engine
         void checkEvents();
         void resetEvents();
         
-        std::vector<sf:Event> newEvents;
+        std::vector<sf::Event> newEvents;
         
         std::vector<sf::Event> getEvents(sf::Event::EventType);
         
