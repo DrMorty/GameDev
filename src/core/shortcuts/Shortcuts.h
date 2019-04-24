@@ -25,10 +25,12 @@ using engine::Script;
 namespace engineS
 {
     using namespace engine;
+    
     void createObject(std::string name);
+    GameObject& getObject(std::string name);
     void deleteObject(std::string name);
     void deleteObject(GameObject* object);
-    GameObject* findObject(std::string name);
+    
     void run();
     void stop();
 
