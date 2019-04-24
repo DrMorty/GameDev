@@ -24,6 +24,14 @@ namespace engine
         highlighted = true;
     }
   
+  void Collision::disableHighlight()
+    {
+        if (!highlighted)
+            Engine::instance()->renderManager->unregisterCollider(this);
+
+        highlighted = false;
+    }
+  
   void Collision::setCollisionWithSprite()
   {
     if (!object ->hasComponent<Renderer>())
