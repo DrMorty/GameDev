@@ -7,6 +7,7 @@
 #include "management/LogicsManager.h"
 #include "management/PhysicsManager.h"
 #include "storage/DataStorage.h"
+#include "shortcuts/Shortcuts.h"
 
 #include "GameControl/ControlFPS.h"
 #include "GameControl/GameControlScript.h"
