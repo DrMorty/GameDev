@@ -15,7 +15,7 @@ namespace engine
         Engine::instance()->dataStorage->window().draw(object);
     }
     
-   void RenderManager::renderCollider(BoxCollider* collider)
+   void RenderManager::renderCollider(Collision* collider)
    {
     sf::Vertex lines[] = 
     {
@@ -49,12 +49,12 @@ namespace engine
         renderers.erase(remove(renderers.begin(), renderers.end(), renderer), renderers.end());
     }
 
-    void RenderManager::addCollider(BoxCollider* collider)
+    void RenderManager::addCollider(Collision* collider)
     {
         colliders.push_back(collider);
     }
 
-    void RenderManager::deleteCollider(BoxCollider* collider)
+    void RenderManager::deleteCollider(Collision* collider)
     {
         colliders.erase(remove(colliders.begin(), colliders.end(), collider), colliders.end());
     }
