@@ -22,7 +22,7 @@ namespace engine
 
     private:
         std::vector<Renderer*> renderers;
-        std::vector<BoxCollider*> colliders;
+        std::vector<Collision*> colliders;
 
         void renderCollider(Collision* collider);
     };
