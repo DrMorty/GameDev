@@ -1,42 +1,41 @@
 #include <SFML/Graphics.hpp>
 
-#include <iostream>
-#include <algorithm>
-#include "../engine.h"
 #include "EventManager.h"
-#include "Datastorage.h"
+#include "../Engine.h"
 
 namespace engine
 {
-
-  
-  void EventManager::checkEvents()
-  {
-    sf::Event event;
-    
-    while((Datadtorage->window()).pollEvent(event))
+    void EventManager::pollEvents()
     {
-      if (event.type == sf::Event::KeyPressed)
-      {
-        KeyboardInput::keyPressed(event.key.code)
-      };
-      
-      newEvents.push_back(event);
+        sf::Event event;
+        auto& window = Engine::instance()->dataStorage->getWindowInstance();
+
+        while(window.pollEvent(event))
+        {
+            if (event.type == sf::Event::KeyPressed) 
+                Input::keyPressed(event.key.code);
+
+            if (event.type == sf::Event::KeyReleased)
+                Input::keyReleased(event.key.code);
+
+            newEventsPerFrame.push_back(event);
+        }
+            
     }
-  }
-  
-  void EventManager::resetEvents()
-  {
-    newEvents.clear();
-  }
-  
-  std::vector<sf::Event> EventManager::getEvents(sf::Event::EventType type)
-  {
-    std::vector<sf::Event> events;
-    
-    for (auto event : newEvents)
-      if (type == event.type)
-        events.push_back(event);
-    return events;
-  }
+
+    void EventManager::clearEvents()
+    {
+        newEventsPerFrame.clear();
+    }
+
+    std::vector<sf::Event> EventManager::getAllEventsOfType(sf::Event::EventType type)
+    {
+        std::vector<sf::Event> eventsOfType;
+
+        for (auto& event : newEventsPerFrame)
+            if (event.type == type)
+                eventsOfType.push_back(event);
+
+        return eventsOfType;
+    }
 }
