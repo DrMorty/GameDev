@@ -2,7 +2,7 @@
 #define SCRIPT_H
 
 #include "GameObjectComponent.h"
-#include "BoxCollider.h"
+#include "Collision.h"
 
 namespace engine
 {   
