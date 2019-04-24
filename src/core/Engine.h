@@ -29,9 +29,9 @@ namespace engine
 
         void engineRun();
 
-        DataStorage* DataStorage;
-        DrawManager* DrawManager;
-        LogicManager* LogicManager;
+        DataStorage* dataStorage;
+        RenderManager* renderManager;
+        LogicManager* logicManager;
 
     private:
         Engine();
