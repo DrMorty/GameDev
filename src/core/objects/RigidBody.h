@@ -2,7 +2,7 @@
 #define RIGID_BODY_H
 
 #include "GameObjectComponent.h"
-#include "../common/math/Math.h"
+#include "../common/Math.h"
 
 namespace engine
 {   
