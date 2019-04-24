@@ -4,7 +4,7 @@
 #include "core/shortcuts/Shortcuts.h"
 
 
-engine* Engine::ex_instance = 0;
+Engine* engine::ex_instance = 0;
 
 class Square : public Script
 {
