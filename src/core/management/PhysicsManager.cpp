@@ -66,12 +66,12 @@ namespace engine
                     resolveCollision(firstObjectDetails);
 
                     auto secondObjectDetails = firstObjectDetails;
-                    secondObjectDetails.collider1 = firstObjectDetails.collider2;
-                    secondObjectDetails.collider2 = firstObjectDetails.collider1;
-                    secondObjectDetails.collisionTrajectory = -1.0f * firstObjectDetails.collisionTrajectory;
+                    secondObjectDetails.Collider1 = firstObjectDetails.Collider2;
+                    secondObjectDetails.Collider2 = firstObjectDetails.Collider1;
+                    secondObjectDetails.CollisionTrajectory = -1.0f * firstObjectDetails.collisionTrajectory;
 
-                    Engine::instance()->logicsManager->callOnCollisionForObject(firstCollider->object, firstObjectDetails);
-                    Engine::instance()->logicsManager->callOnCollisionForObject(secondCollider->object, secondObjectDetails);       
+                    Engine::instance()->logicManager->callOnCollisionForObject(firstCollider->object, firstObjectDetails);
+                    Engine::instance()->logicManager->callOnCollisionForObject(secondCollider->object, secondObjectDetails);       
                 }
             }
 
@@ -118,16 +118,16 @@ namespace engine
 
     void PhysicsManager::resolveCollision(CollisionDetails& details)
     {
-        if (!details.collider1->isDynamic)
+        if (!details.Collider1->isDynamic)
             return;
 
-        if (!details.collider2->object->hasComponent<RigidBody>())
+        if (!details.Collider2->object->hasComponent<RigidBody>())
         {
-            details.collider1->object->getComponent<RigidBody>()->velocity = Vector3();
+            details.Collider1->object->getComponent<RigidBody>()->velocity = Vector3();
             return;
         }
 
         //Add impulse resolving
-        details.collider1->object->getComponent<RigidBody>()->velocity = Vector3();
+        details.Collider1->object->getComponent<RigidBody>()->velocity = Vector3();
     }
 }
