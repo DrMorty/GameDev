@@ -6,11 +6,11 @@
 #include <vector>
 #include <iostream>
 
-#include "../object_components/GameObjectComponent.h"
-#include "../object_components/BoxCollider.h"
-#include "../object_components/Renderer2D.h"
-#include "../object_components/RigidBody.h"
-#include "../object_components/Script.h"
+#include "../objects/GameObjectComponent.h"
+#include "../objects/Collision.h"
+#include "../objects/Renderer.h"
+#include "../objects/RigidBody.h"
+#include "../objects/Script.h"
 
 #include "../common/math/Math.h"
 
