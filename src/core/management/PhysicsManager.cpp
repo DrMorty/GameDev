@@ -44,7 +44,7 @@ namespace engine
             if (rigidBody->isGravity)
                 rigidBody->velocity -= Vector3(0, rigidBody->gravityValue);
 
-            rigidBody->object->transform.position += rigidBody->velocity * Time::deltaTime;
+            rigidBody->object->transform.position += rigidBody->velocity * ControlFPS::deltaTime;
         }
             
     }
