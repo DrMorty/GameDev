@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "../object_components/Renderer.h"
-#include "../object_components/BoxCollider.h"
+#include "../object_components/Collision.h"
 
 namespace engine
 {   
@@ -17,14 +17,14 @@ namespace engine
         void addRenderer(Renderer* renderer);
         void deleteRenderer(Renderer* renderer);
 
-        void addCollider(BoxCollider* collider);
-        void deleteCollider(BoxCollider* collider);
+        void addCollider(Collision* collider);
+        void deleteCollider(Collision* collider);
 
     private:
         std::vector<Renderer*> renderers;
         std::vector<BoxCollider*> colliders;
 
-        void renderCollider(BoxCollider* collider);
+        void renderCollider(Collision* collider);
     };
 }
 
