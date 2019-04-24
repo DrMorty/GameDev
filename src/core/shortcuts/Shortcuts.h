@@ -30,7 +30,7 @@ namespace engineS
     void deleteObject(GameObject* object);
     GameObject* findObject(std::string name);
     void run();
-
+    void stop();
 
 }
 
