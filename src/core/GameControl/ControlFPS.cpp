@@ -4,7 +4,8 @@
 namespace engine
 {
   float ControlFPS::deltaTime = 0;
-    std::chrono::time_point <std::chrono::_V2::system_clock> Time::previousTime = std::chrono::system_clock::now();
+    std::chrono::time_point <std::chrono::_V2::system_clock> ControlFPS::previousTime = std::chrono::system_clock::now();
+  
   ControlFPS::ControlFPS()
   {
   }
@@ -19,7 +20,7 @@ namespace engine
         previousTime = currentTime;
     }
   
-  int::ControlFPS::FPS = 0;
+  int ControlFPS::FPS = 0;
   bool ControlFPS::Logging = false;
   
   void ControlFPS::updateMetrics()
