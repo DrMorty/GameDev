@@ -1,12 +1,12 @@
-#ifndef METRICS_H
-#define METRICS_H
+#ifndef CONTROLFPS_H
+#define CONTROLFPS_H
 
 #include <chrono>
 #include <ctime>
 
 namespace engine
 {
-    class Metrics
+    class ControlFPS
     {
      public:
         static float deltaTime;
@@ -24,8 +24,7 @@ namespace engine
         static std::chrono::time_point <std::chrono::_V2::system_clock> previousTime;
         static bool Logging;
         
-        Time(); 
-        Metrics();
+        ControlFPS(); 
     };
 }
 
