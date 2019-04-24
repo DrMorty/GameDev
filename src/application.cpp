@@ -16,16 +16,16 @@ class Square : public Script
 
     void update()
     {
-        if (engineS::Input::getKey(KeyCode::A))
+        if (engineS::KeyboardInput::getKey(KeyCode::A))
             object->transform.position.x -= 0.5;
 
-        if (engineS::Input::getKey(KeyCode::D))
+        if (engineS::KeyboardInput::getKey(KeyCode::D))
             object->transform.position.x += 0.5;
             
-        if (engineS::Input::getKey(KeyCode::S))
+        if (engineS::KeyboardInput::getKey(KeyCode::S))
             object->transform.position.y -= 0.5;
 
-        if (engineS::Input::getKey(KeyCode::W))
+        if (engineS::KeyboardInput::getKey(KeyCode::W))
             object->transform.position.y += 0.5;
     }
 };
