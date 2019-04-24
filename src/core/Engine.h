@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "management/RenderManager.h"
-#include "management/LogicsManager.h"
+#include "management/LogicManager.h"
 #include "management/PhysicsManager.h"
 #include "storage/DataStorage.h"
 #include "shortcuts/Shortcuts.h"
