@@ -8,12 +8,12 @@
 #include "management/PhysicsManager.h"
 #include "storage/DataStorage.h"
 
-#include "controllers/KeyboardInput.h"
-#include "controllers/Time.h"
-#include "controllers/Camera.h"
+#include "GameControl/ControlFPS.h"
+#include "GameControl/GameControlScript.h"
+#include "GameControl/Camera.h"
 
-using engine::Renderer2D;
-using engine::BoxCollider;
+using engine::Renderer;
+using engine::Collision;
 using engine::CollisionDetails;
 using engine::Script;
 
