@@ -75,7 +75,7 @@ namespace engine
 
     void GameObject::unregisterColliderForThisObject(GameObjectComponent* collider)
     {
-        Engine::instance()->physicsManager->unregisterCollider(static_cast<BoxCollider*>(collider));
+        Engine::instance()->physicsManager->unregisterCollider(static_cast<Collision*>(collider));
     }
 
     void GameObject::unregisterRigidBodyForThisObject(GameObjectComponent* rigidBody)
