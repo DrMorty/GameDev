@@ -4,6 +4,16 @@
 #include "../GameControl/GameControlScript.h"
 #include <exception>
 
+namespace engine
+{    
+    class EngineException: public std::exception
+    {
+    };
+
+    EngineException GameObjectAlreadyExist;
+
+    Engine* Engine::m_instance = 0;
+}
 
 namespace engineS
 {
