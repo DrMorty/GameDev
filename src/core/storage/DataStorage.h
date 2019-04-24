@@ -26,7 +26,7 @@ namespace engine
     {
     public:
 
-        DataStorage(WindowSettings windowSettings = HD);
+        DataStorage(WindowSettings windowSettings = HD_Window);
         ~DataStorage();
 
         sf::RenderWindow& getWindowInstance();
