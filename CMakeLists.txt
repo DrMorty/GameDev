@@ -1,37 +1,22 @@
-cmake_minimum_required(VERSION 2.8)
+CXX=g++
+CXXFLAGS= -std=c++17 -Wall 
+LDFLAGS = -lsfml-system -lsfml-graphics -lsfml-window
 
-project(2DEngine)
+csrc = $(wildcard src/*.cpp) 					        \
+       $(wildcard src/core/*.cpp) 				        \
+       $(wildcard src/core/Gameontrol/*.cpp)           \
+       $(wildcard src/core/management/*.cpp)			\
+       $(wildcard src/core/objects/*.cpp)		\
+       $(wildcard src/core/storage/*.cpp)               \
+       $(wildcard src/core/shortcuts/*.cpp)               \
 
+obj = $(csrc:.cpp=.o)
 
-set(SFML_INCLUDE_DIR "SFML/include")
-set(SFML_LIBRARY_DIR "SFML/lib")
+all: EngineX clean
 
-include_directories("SFML/include")
-link_directories("SFML/lib")
+EngineX: $(obj)
+	$(CXX) $(CFLAGS)-o $@ $^ $(LDFLAGS)	
 
-set(SFML_DIR "SFML/lib/cmake/SFML")
-find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
-
-
-
-
-set(project_sources src/main.cpp
-                    src/application.cpp
-                    src/scripts/picturescript.cpp
-                    src/core/engine.cpp
-                    src/core/management/eventmanager.cpp
-                    src/core/management/drawmanager.cpp
-                    src/core/objects/gameobject.cpp
-                    src/core/objects/renderer.cpp
-                    src/core/objects/basicscript.cpp
-                    src/core/storage/datastorage.cpp
-                    src/core/tools/tools.cpp)
-
-
-
-add_executable(${PROJECT_NAME} ${project_sources})
-
-target_link_libraries (${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
-
-#Hello!Hello!Hello!
+clean: 
+	rm $(obj)
 
