@@ -5,6 +5,9 @@ namespace engine
 {
   float ControlFPS::deltaTime = 0;
     std::chrono::time_point <std::chrono::_V2::system_clock> Time::previousTime = std::chrono::system_clock::now();
+  ControlFPS::ControlFPS()
+  {
+  }
 
   void ControlFPS::UpdateTime()
   {
@@ -24,7 +27,7 @@ namespace engine
     static int frames = 0;
     static float elapsedTime = 0;
     
-    elapsedTime += Time::deltaTime;
+    elapsedTime += ControlFPS::deltaTime;
     frames++;
     
     if (elapsedTime >=1.0f)
