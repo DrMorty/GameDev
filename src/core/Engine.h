@@ -32,6 +32,7 @@ namespace engine
         DataStorage* dataStorage;
         RenderManager* renderManager;
         LogicManager* logicManager;
+        PhysicsManager* physicsManager;
 
     private:
         Engine();
