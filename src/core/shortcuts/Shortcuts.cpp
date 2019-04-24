@@ -17,9 +17,6 @@ namespace engineS
     {
         auto& v = Engine::instance()->dataStorage->getGameObjects();
 
-        if (v.find(name) != v.end())
-            throw GameObjectAlreadyExist;
-
         v.try_emplace(name, name);
     }
 
