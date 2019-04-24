@@ -7,7 +7,7 @@
 
 
 
-namespace engineShorty
+namespace engineS
 {
     using namespace engine;
     void createObject(std::string name);
