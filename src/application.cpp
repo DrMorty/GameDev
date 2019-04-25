@@ -13,9 +13,7 @@ class Square : public Script
 
         object->addComponent<Collision>();
         object->getComponent<Collision>()->setCollision(-100, 100, 100, -100);
-        
-        object->transform.position.y = 100;
-       // object->transform.position.x = 100;
+
     }
 
     void update()
@@ -47,7 +45,7 @@ int main()
     background.loadFromFile("background.jpg");
 
     engineS::getObject("background").transform.position.y = 350;
-    engineS::getObject("background").transform.position.x = 200;
+    engineS::getObject("background").transform.position.x = -500;
     engineS::getObject("background").addComponent<Renderer>();
     engineS::getObject("background").getComponent<Renderer>()->setSprite(background);
  
