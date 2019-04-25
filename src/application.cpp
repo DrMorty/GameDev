@@ -15,8 +15,8 @@ class Square : public Script
         object->getComponent<Collision>()->enableHighlight();
         object->getComponent<Collision>()->setCollision(-100, 100, 100, -100);
         
-        object->transform.position.y = 100;
-        object->transform.position.x = 100;
+        //object->transform.position.y = 100;
+       // object->transform.position.x = 100;
     }
 
     void update()
@@ -33,8 +33,8 @@ class Square : public Script
         if (engineS::KeyboardInput::getKey(KeyCode::W))
             object->transform.position.y += 0.5;
         
-        //if (engineS::KeyboardInput::getKey(KeyCode::Escape))
-          //  window->close();
+        if (engineS::KeyboardInput::getKey(KeyCode::Escape))
+            window->close();
 
     }
 };
@@ -54,13 +54,12 @@ int main()
  
     sf::Texture error;
     error.loadFromFile("error.jpg");
-    sf::Sprite sprite;
-    sprite.setTexture(error);
+
  
     engineS::createObject("square");
     engineS::getObject("square").addComponent<Square>();
     engineS::getObject("square").addComponent<Renderer>();
-    engineS::getObject("square").getComponent<Renderer>()->setSprite(sprite); 
+    engineS::getObject("square").getComponent<Renderer>()->setSprite(error); 
     
     engineS::run();
  return 0;
