@@ -52,7 +52,7 @@ int main()
     engineS::getObject("background").addComponent<Renderer>();
     engineS::getObject("background").getComponent<Renderer>()->setSprite(background);
  
-    sf::Sprite error;
+    sf::Textire error;
     error.loadFromFile("error.jpg");
     
     engineS::createObject("test");
