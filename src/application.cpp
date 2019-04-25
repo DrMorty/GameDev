@@ -33,8 +33,8 @@ class Square : public Script
         if (engineS::KeyboardInput::getKey(KeyCode::W))
             object->transform.position.y += 0.5;
         
-        if (engineS::KeyboardInput::getKey(KeyCode::Escape))
-            window->close();
+        //if (engineS::KeyboardInput::getKey(KeyCode::Escape))
+         //   window->close();
 
     }
 };
