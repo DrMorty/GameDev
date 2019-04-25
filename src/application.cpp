@@ -5,7 +5,7 @@
 
 
 
-class Square : public Script
+class movingSquare : public Script
 {
  public:
     void start()
@@ -29,14 +29,23 @@ class Square : public Script
 
         if (engineS::KeyboardInput::getKey(KeyCode::W))
             object->transform.position.y += 20;
-        
-        //if (engineS::KeyboardInput::getKey(KeyCode::Escape))
-         //   window->close();
 
     }
 };
 
-
+class staticSquare : public Script
+{
+ public:
+  void start():
+  {
+     tmp = 100 + rand()%10
+     object->addComponent<Collision>();
+     object->getComponent<Collision>()->setCollision(-tmp, tmp, tmp, -tmp);
+      object->transform.position.y = -tmp;
+       object->transform.position.x = tmp;
+      
+  }
+};
 int main()
 {
     engineS::createObject("background"); 
@@ -54,10 +63,23 @@ int main()
 
  
     engineS::createObject("square");
-    engineS::getObject("square").addComponent<Square>();
+    engineS::getObject("square").addComponent<movingSquare>();
     engineS::getObject("square").addComponent<Renderer>();
     engineS::getObject("square").getComponent<Renderer>()->setSprite(error); 
     
+    sf::Event event;
+    while(true) {
+     if(event.type ==sf::Event::KeyeboardInput)
+      i = 0
+       engineS::createObject("i");
+       engineS::getObject("i").addComponent<staticSquare>();
+    engineS::getObject("i").addComponent<Renderer>();
+    engineS::getObject("i").getComponent<Renderer>()->setSprite(background);
+     i += 1
+    }
+      
+
+     
     engineS::run();
  return 0;
 }
