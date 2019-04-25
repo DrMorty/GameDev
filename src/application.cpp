@@ -54,9 +54,10 @@ int main()
  
     sf::Texture error;
     error.loadFromFile("error.jpg");
-    engineS::createObject("square");
-    engineS::getObject("square").addComponent<Square>();
-    engineS::getObject("square").getComponent<Renderer>()->setSprite(error);
+    
+    engineS::createObject("test");
+    engineS::getObject("test").addComponent<Square>();
+    engineS::getObject("test").getComponent<Renderer>()->setSprite(error);
     
     
     engineS::run();
