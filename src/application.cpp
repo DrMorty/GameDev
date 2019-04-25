@@ -42,6 +42,16 @@ class Square : public Script
 
 int main()
 {
+    engineS::createObject("test");
+
+    sf::Texture texture;
+    texture.loadFromFile("background.jpg");
+
+    engineS::getObject("test").transform.position.y = 250;
+    engineS::getObject("test").addComponent<Renderer>();
+    engineS::getObject("test").getComponent<Renderer>()->setSprite(texture);
+ 
+ 
     engineS::createObject("square");
     engineS::getObject("square").addComponent<Square>();
     
