@@ -22,13 +22,13 @@ class Square : public Script
             object->transform.position.x -= 20;
 
         if (engineS::KeyboardInput::getKey(KeyCode::D))
-            object->transform.position.x += 5;
+            object->transform.position.x += 20;
             
         if (engineS::KeyboardInput::getKey(KeyCode::S))
-            object->transform.position.y -= 5;
+            object->transform.position.y -= 20;
 
         if (engineS::KeyboardInput::getKey(KeyCode::W))
-            object->transform.position.y += 5;
+            object->transform.position.y += 20;
         
         //if (engineS::KeyboardInput::getKey(KeyCode::Escape))
          //   window->close();
@@ -44,8 +44,8 @@ int main()
     sf::Texture background;
     background.loadFromFile("background.jpg");
 
-    engineS::getObject("background").transform.position.y = 640;
-    engineS::getObject("background").transform.position.x = -360;
+    engineS::getObject("background").transform.position.y = 360;
+    engineS::getObject("background").transform.position.x = -640;
     engineS::getObject("background").addComponent<Renderer>();
     engineS::getObject("background").getComponent<Renderer>()->setSprite(background);
  
