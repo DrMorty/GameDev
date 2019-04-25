@@ -10,13 +10,13 @@ class Square : public Script
  public:
     void start()
     {
-    
-        object->transform.position.y = 100;
-        object->transform.position.x = 100;
+
         object->addComponent<Collision>();
         object->getComponent<Collision>()->enableHighlight();
         object->getComponent<Collision>()->setCollision(-50, 15, 50, -15);
         
+        object->transform.position.y = 100;
+        object->transform.position.x = 100;
     }
 
     void update()
@@ -33,8 +33,8 @@ class Square : public Script
         if (engineS::KeyboardInput::getKey(KeyCode::W))
             object->transform.position.y += 0.5;
         
-        if (engineS::KeyboardInput::getKey(KeyCode::Escape))
-            window.close();
+        //if (engineS::KeyboardInput::getKey(KeyCode::Escape))
+          //  window.close();
 
     }
 };
@@ -42,19 +42,21 @@ class Square : public Script
 
 int main()
 {
-    engineS::createObject("test");
+    engineS::createObject("background"); 
 
-    sf::Texture texture;
-    texture.loadFromFile("background.jpg");
+    sf::Texture background;
+    background.loadFromFile("background.jpg");
 
-    engineS::getObject("test").transform.position.y = 350;
-    engineS::getObject("test").transform.position.x = -500;
-    engineS::getObject("test").addComponent<Renderer>();
-    engineS::getObject("test").getComponent<Renderer>()->setSprite(texture);
+    engineS::getObject("background").transform.position.y = 350;
+    engineS::getObject("background").transform.position.x = -500;
+    engineS::getObject("background").addComponent<Renderer>();
+    engineS::getObject("background").getComponent<Renderer>()->setSprite(background);
  
- 
+    sf::Texture error;
+    error.loadFromFile("error.jpg");
     engineS::createObject("square");
     engineS::getObject("square").addComponent<Square>();
+    engineS::getObject("square").getComponent<Renderer>()->setSprite(error);
     
     
     engineS::run();
