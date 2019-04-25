@@ -19,6 +19,9 @@ namespace engine
                 KeyboardInput::keyReleased(event.key.code);
 
             newEventsPerFrame.push_back(event);
+            
+            if (event.type == sf::Event::Closed)
+                window->close();
         }
             
     }
