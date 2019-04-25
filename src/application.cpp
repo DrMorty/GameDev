@@ -47,19 +47,20 @@ int main()
     sf::Texture background;
     background.loadFromFile("background.jpg");
 
-    engineS::getObject("background").transform.position.y = 340;
-    engineS::getObject("background").transform.position.x = -200;
+    engineS::getObject("background").transform.position.y = 350;
+    engineS::getObject("background").transform.position.x = 200;
     engineS::getObject("background").addComponent<Renderer>();
     engineS::getObject("background").getComponent<Renderer>()->setSprite(background);
  
     sf::Texture error;
     error.loadFromFile("error.jpg");
-
+    sf::Sprite sprite;
+    sprite.setTexture(error);
  
     engineS::createObject("square");
     engineS::getObject("square").addComponent<Square>();
     engineS::getObject("square").addComponent<Renderer>();
-    engineS::getObject("square").getComponent<Renderer>()->setSprite(error); 
+    engineS::getObject("square").getComponent<Renderer>()->setSprite(sprite); 
     
     engineS::run();
  return 0;
