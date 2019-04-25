@@ -13,7 +13,7 @@ class Square : public Script
 
         object->addComponent<Collision>();
         object->getComponent<Collision>()->enableHighlight();
-        object->getComponent<Collision>()->setCollision(-50, 15, 50, -15);
+        object->getComponent<Collision>()->setCollision(-100, 100, 100, -100);
         
         object->transform.position.y = 100;
         object->transform.position.x = 100;
@@ -52,7 +52,7 @@ int main()
     engineS::getObject("background").addComponent<Renderer>();
     engineS::getObject("background").getComponent<Renderer>()->setSprite(background);
  
-    sf::Texture error;
+    sf::Sprite error;
     error.loadFromFile("error.jpg");
     
     engineS::createObject("test");
