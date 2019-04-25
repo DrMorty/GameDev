@@ -47,8 +47,8 @@ int main()
     sf::Texture texture;
     texture.loadFromFile("background.jpg");
 
-    engineS::getObject("test").transform.position.y = 500;
-    engineS::getObject("test").transform.position.x = -100;
+    engineS::getObject("test").transform.position.y = 350;
+    engineS::getObject("test").transform.position.x = -500;
     engineS::getObject("test").addComponent<Renderer>();
     engineS::getObject("test").getComponent<Renderer>()->setSprite(texture);
  
