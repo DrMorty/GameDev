@@ -34,7 +34,7 @@ class Square : public Script
             object->transform.position.y += 0.5;
         
         if (engineS::KeyboardInput::getKey(KeyCode::Escape))
-            engineS::stop();
+            window.close();
 
     }
 };
