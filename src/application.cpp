@@ -12,26 +12,25 @@ class Square : public Script
     {
 
         object->addComponent<Collision>();
-        object->getComponent<Collision>()->enableHighlight();
         object->getComponent<Collision>()->setCollision(-100, 100, 100, -100);
         
-        //object->transform.position.y = 100;
+        object->transform.position.y = 100;
        // object->transform.position.x = 100;
     }
 
     void update()
     {
         if (engineS::KeyboardInput::getKey(KeyCode::A))
-            object->transform.position.x -= 0.5;
+            object->transform.position.x -= 5;
 
         if (engineS::KeyboardInput::getKey(KeyCode::D))
-            object->transform.position.x += 0.5;
+            object->transform.position.x += 5;
             
         if (engineS::KeyboardInput::getKey(KeyCode::S))
-            object->transform.position.y -= 0.5;
+            object->transform.position.y -= 5;
 
         if (engineS::KeyboardInput::getKey(KeyCode::W))
-            object->transform.position.y += 0.5;
+            object->transform.position.y += 5;
         
         //if (engineS::KeyboardInput::getKey(KeyCode::Escape))
          //   window->close();
