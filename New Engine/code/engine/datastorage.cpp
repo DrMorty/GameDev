@@ -9,6 +9,6 @@ void DataStorage::add_object(){
 }
 
 void DataStorage::delete_object(int i){
-    game_objects.erase(game_objects.begin() + 1);
+    game_objects.erase(game_objects.begin() + i);
 
 }
