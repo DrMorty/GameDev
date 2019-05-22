@@ -5,8 +5,8 @@ GameObject::GameObject()
     coordinates.x=0;
     coordinates.y=0;
     rotation=0;
-    size.x=266;
-    size.y=399;
+    size.x=50;
+    size.y=50;
     has_Script=false;
     has_Collider=false;
     has_Renderer=false;
