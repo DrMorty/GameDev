@@ -21,6 +21,7 @@ public:
     API();
     Engine engine;
     void create_game_object();
+    void delete_game_object();
     void add_components(int GameObjectNumber, std::string new_components_type);
 
 };
