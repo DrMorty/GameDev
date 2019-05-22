@@ -20,7 +20,7 @@ class movingSquare : public Script
 
     void update()
     {
-        object->transform.position.y -= 200;
+        object->transform.position.y -= 20;
         if (object->transform.position.y < -400)
             std::cout << "Too bad" << std::endl;
     }
