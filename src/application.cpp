@@ -61,13 +61,21 @@ int main()
     engineS::getObject("background").addComponent<Renderer>();
     engineS::getObject("background").getComponent<Renderer>()->setSprite(background);
 
+    engineS::createObject("texture");
  
+    sf::Texture texture;
+   texture.loadFromFile("green button.jpeg");
+  
     engineS::createObject("msquare");
     engineS::getObject("msquare").addComponent<movingSquare>();
+    engineS::getObject("msquare").addComponent<Renderer>();
+    engineS::getObject("msquare").getComponent<Renderer>()->setSprite(texture);
     //engineS::getObject("msquare").addComponent<Renderer>();
  
     engineS::createObject("ssquare");
     engineS::getObject("ssquare").addComponent<staticSquare>();
+     engineS::getObject("square").addComponent<Renderer>();
+    engineS::getObject("square").getComponent<Renderer>()->setSprite(texture);
     //engineS::getObject("ssquare").addComponent<Renderer>();
 
     for (int i = 0; i < 10; i++ )
