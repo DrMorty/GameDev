@@ -12,6 +12,7 @@ class movingSquare : public Script
     {
         object->addComponent<Collision>();
         object->getComponent<Collision>()->enableHighlight();
+        object->getComponent<Collision>()->isDynamic = false;
         object->getComponent<Collision>()->setCollision(-20, 20, 20, -20);
         object->transform.position.y = 360;
         
