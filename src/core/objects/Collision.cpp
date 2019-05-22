@@ -39,9 +39,9 @@ namespace engine
       
     auto spriteSize = object -> getComponent<Renderer>()->getTexture().getSize();
     
-    leftTop.x = 0 - spriteSize.x /2.0;
-    leftTop.y = 0 + spriteSize.y /2.0;
-    rightDown.x = 0 + spriteSize.x /2.0;
-    rightDown.y = 0 - spriteSize.y /2.0;
+    leftTop.x = spriteSize.x / 2.0;
+    leftTop.y = spriteSize.y / 2.0;
+    rightDown.x = spriteSize.x / 2.0;
+    rightDown.y = spriteSize.y / 2.0;
   }
 }
