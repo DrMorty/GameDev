@@ -16,24 +16,23 @@ class movingSquare : public Script
         object->getComponent<Collision>()->setCollision(-20, 20, 20, -20);
         object->transform.position.y = 360;
         
-        object->addComponent<RigidBody>();
-        object->getComponent<RigidBody>()->velocity = sf::Vector2f(0, 80);
-        object->getComponent<RigidBody>()->isGravity = false;
+        
         
 
     }
 
     void update()
     {
-
-        
+        object->transform.position.y -= 20;
+        if (object->transform.position.y < -400)
+            std::cout << "Too bad" << std::endl;
     }
     
-    void collision()
+    void collision(CollisionDetails& details)
     {
         if (engineS::KeyboardInput::getKey(KeyCode::D))
-            //engineS::deleteObject(object);
-            object->transform.position.y += 200;
+            engineS::deleteObject(object);
+            
             
     }
 };
@@ -76,7 +75,7 @@ int main()
     //engineS::getObject("ssquare").addComponent<Renderer>();
 
     
-    
+    //for (int i = 0; i < 10; i++ 
       
 
      
