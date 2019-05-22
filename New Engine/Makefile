@@ -2,10 +2,10 @@ CXX=g++
 CXXFLAGS= -std=c++17 -Wall 
 LDFLAGS = -lsfml-system -lsfml-graphics -lsfml-window
 
-csrc = $(wildcard *.cpp) 					        \
+csrc = $(wildcard /*.cpp) 					        \
        $(wildcard code/*.cpp) 				        \
-       $(wildcard code/engine*.cpp)           \
-       $(wildcard code/engine/storage*.cpp)           \
+       $(wildcard code/engine/*.cpp)           \
+       $(wildcard code/engine/storage/*.cpp)           \
 
 
 obj = $(csrc:.cpp=.o)
