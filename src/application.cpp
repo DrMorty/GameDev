@@ -13,7 +13,7 @@ class movingSquare : public Script
         object->addComponent<Collision>();
         object->getComponent<Collision>()->setCollision(-20, 20, 20, -20);
         object->transform.position.y = 360;
-        score = 0;
+        
 
     }
 
@@ -28,7 +28,7 @@ class movingSquare : public Script
         if (engineS::KeyboardInput::getKey(KeyCode::D))
             //engineS::deleteObject(object);
             object->transform.position.y += 200;
-            score += 1;
+            
     }
 };
 
