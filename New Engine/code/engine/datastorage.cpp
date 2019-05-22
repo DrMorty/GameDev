@@ -7,3 +7,8 @@ void DataStorage::add_object(){
     game_objects.push_back(new_object);
 
 }
+
+void DataStorage::delete_object(int i){
+    game_objects.erase(game_objects.begin() + 1);
+
+}
