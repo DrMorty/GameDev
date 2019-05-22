@@ -16,12 +16,16 @@ class movingSquare : public Script
         object->getComponent<Collision>()->setCollision(-20, 20, 20, -20);
         object->transform.position.y = 360;
         
+        object->addComponent<RigidBody>();
+        object->getComponent<RigidBody>()->velocity = sf::Vector2f(0, 80);
+        object->getComponent<RigidBody>()->isGravity = false;
+        
 
     }
 
     void update()
     {
-        object->transform.position.y -= 20;
+
         
     }
     
