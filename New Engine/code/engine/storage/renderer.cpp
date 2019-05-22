@@ -5,7 +5,7 @@ Renderer::Renderer(){
     components_type="Renderer";
     isRendered=true;
     Renderertype="sprite";
-    address="Golovan.png";
+    address="1.png";
     text="Choose this engine";
     text_size=10;
     color=sf::Color(0,0,250);
