@@ -35,7 +35,7 @@ class movingSquare : public Script
 class staticSquare : public Script
 {
  public:
-  void start():
+  void start()
   {
      object->addComponent<Collision>();
      object->getComponent<Collision>()->setCollision(-50, 50, 50, -50);
