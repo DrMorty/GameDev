@@ -59,11 +59,11 @@ int main()
  
     engineS::createObject("msquare");
     engineS::getObject("msquare").addComponent<movingSquare>();
-    engineS::getObject("msquare").addComponent<Renderer>();
+    //engineS::getObject("msquare").addComponent<Renderer>();
  
     engineS::createObject("ssquare");
-    engineS::getObject("ssquare").addComponent<movingSquare>();
-    engineS::getObject("ssquare").addComponent<Renderer>();
+    engineS::getObject("ssquare").addComponent<staticSquare>();
+    //engineS::getObject("ssquare").addComponent<Renderer>();
 
     
     
