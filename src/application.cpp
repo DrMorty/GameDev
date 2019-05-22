@@ -17,8 +17,7 @@ class movingSquare : public Script
         object->transform.position.y = 360;
         
         
-        
-
+       
     }
 
     void update()
@@ -75,10 +74,8 @@ int main()
     //engineS::getObject("ssquare").addComponent<Renderer>();
 
     
-    //for (int i = 0; i < 10; i++ 
-      
+    
 
-     
     engineS::run();
  
  return 0;
