@@ -10,6 +10,11 @@ void API::create_game_object(){
 
 }
 
+void API::delete_game_object(){
+    engine.data_storage->delete_object();
+
+}
+
 void API::add_components(int GameObjectNumber, std::string new_components_type){
     int number = engine.data_storage->game_objects[GameObjectNumber].components.size();
     if(new_components_type=="Script"){
