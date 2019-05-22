@@ -34,18 +34,13 @@ void PhysicsManager::collision(std::vector<GameObject> all_game_objects){
                                          all_game_objects[j].size.x,
                                          all_game_objects[j].size.y);
                     if(rect_i.intersects(rect_j)){
-                        reinterpret_cast<RigidBody*>(all_game_objects[i].components[all_game_objects[i].RigidBodyNumber])->Velocity.x*=-1;
-                        reinterpret_cast<RigidBody*>(all_game_objects[i].components[all_game_objects[i].RigidBodyNumber])->Velocity.y*=-1;
-                        reinterpret_cast<RigidBody*>(all_game_objects[j].components[all_game_objects[j].RigidBodyNumber])->Velocity.x*=-1;
-                        reinterpret_cast<RigidBody*>(all_game_objects[j].components[all_game_objects[j].RigidBodyNumber])->Velocity.y*=-1;
-                        if(all_game_objects[i].coordinates.y<all_game_objects[j].coordinates.y){
-                            all_game_objects[i].coordinates.y=-10;
-                            all_game_objects[j].coordinates.y=+10;
+                        sf::Event event;
+                        
+                        if (event.key.code == sf::Keyboard::Right)
+                        {
+                            engine.data_storage->game_objects.erase(game_objects.begin() + i);
                         }
-                        else{
-                            all_game_objects[j].coordinates.y=-10;
-                            all_game_objects[i].coordinates.y=+10;
-                        }
+                        
                     }
 
 
