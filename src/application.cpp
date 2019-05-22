@@ -10,26 +10,25 @@ class movingSquare : public Script
  public:
     void start()
     {
-
         object->addComponent<Collision>();
-        object->getComponent<Collision>()->setCollision(-100, 100, 100, -100);
+        object->getComponent<Collision>()->setCollision(-20, 20, 20, -20);
+        object->transform.position.y = 360;
+        score = 0;
 
     }
 
     void update()
     {
-        if (engineS::KeyboardInput::getKey(KeyCode::A))
-            object->transform.position.x -= 20;
-
+        object->transform.position.y -= 20;
+        
+    }
+    
+    void collision()
+    {
         if (engineS::KeyboardInput::getKey(KeyCode::D))
-            object->transform.position.x += 20;
-            
-        if (engineS::KeyboardInput::getKey(KeyCode::S))
-            object->transform.position.y -= 20;
-
-        if (engineS::KeyboardInput::getKey(KeyCode::W))
-            object->transform.position.y += 20;
-
+            //engineS::deleteObject(object);
+            object->transform.position.y += 200;
+            score += 1;
     }
 };
 
@@ -38,14 +37,13 @@ class staticSquare : public Script
  public:
   void start():
   {
-     tmp = 100 + rand()%10
      object->addComponent<Collision>();
-     object->getComponent<Collision>()->setCollision(-tmp, tmp, tmp, -tmp);
-      object->transform.position.y = -tmp;
-       object->transform.position.x = tmp;
-      
+     object->getComponent<Collision>()->setCollision(-50, 50, 50, -50);
+     object->transform.position.y = -360;
+ 
   }
 };
+
 int main()
 {
     engineS::createObject("background"); 
@@ -57,29 +55,22 @@ int main()
     engineS::getObject("background").transform.position.x = -640;
     engineS::getObject("background").addComponent<Renderer>();
     engineS::getObject("background").getComponent<Renderer>()->setSprite(background);
- 
-    sf::Texture error;
-    error.loadFromFile("error.jpg");
 
  
-    engineS::createObject("square");
-    engineS::getObject("square").addComponent<movingSquare>();
-    engineS::getObject("square").addComponent<Renderer>();
-    engineS::getObject("square").getComponent<Renderer>()->setSprite(error); 
+    engineS::createObject("msquare");
+    engineS::getObject("msquare").addComponent<movingSquare>();
+    engineS::getObject("msquare").addComponent<Renderer>();
+ 
+    engineS::createObject("ssquare");
+    engineS::getObject("ssquare").addComponent<movingSquare>();
+    engineS::getObject("ssquare").addComponent<Renderer>();
+
     
-    sf::Event event;
-    while(true) {
-     if(event.type ==sf::Event::KeyeboardInput)
-      i = 0
-       engineS::createObject("i");
-       engineS::getObject("i").addComponent<staticSquare>();
-    engineS::getObject("i").addComponent<Renderer>();
-    engineS::getObject("i").getComponent<Renderer>()->setSprite(background);
-     i += 1
-    }
+    
       
 
      
     engineS::run();
+ 
  return 0;
 }
