@@ -11,8 +11,6 @@ class movingSquare : public Script
     void start()
     {
         object->addComponent<Collision>();
-        object->getComponent<Collision>()->enableHighlight();
-        object->getComponent<Collision>()->isDynamic = true;
         object->getComponent<Collision>()->setCollision(-20, 20, 20, -20);
         object->transform.position.y = 360;
         
@@ -42,7 +40,6 @@ class staticSquare : public Script
   void start()
   {
      object->addComponent<Collision>();
-     object->getComponent<Collision>()->enableHighlight();
      object->getComponent<Collision>()->setCollision(-50, 50, 50, -50);
      object->transform.position.y = -360;
  
