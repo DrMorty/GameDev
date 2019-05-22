@@ -73,7 +73,12 @@ int main()
     engineS::getObject("ssquare").addComponent<staticSquare>();
     //engineS::getObject("ssquare").addComponent<Renderer>();
 
-    
+    for (int i = 0; i < 10; i++ )
+    {
+     std::string square = std::to_string(i);
+     engineS::createObject("ssquare");
+     engineS::getObject("ssquare").addComponent<staticSquare>();
+    }
     
 
     engineS::run();
