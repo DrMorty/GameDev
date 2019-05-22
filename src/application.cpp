@@ -42,6 +42,9 @@ class staticSquare : public Script
      object->transform.position.y = -360;
  
   }
+  void update()
+    {  
+    }
 };
 
 int main()
